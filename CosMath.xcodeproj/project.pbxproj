@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		284BD6732CDEB3DC006B83B9 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284BD6722CDEB3DC006B83B9 /* SettingView.swift */; };
+		284BD6752CDEB3F3006B83B9 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284BD6742CDEB3F3006B83B9 /* ResultView.swift */; };
+		284BD6772CDEB4A4006B83B9 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284BD6762CDEB4A4006B83B9 /* FontStyles.swift */; };
 		28BC3F382CBC596200888BC3 /* CosMathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC3F372CBC596200888BC3 /* CosMathApp.swift */; };
 		28BC3F3A2CBC596200888BC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC3F392CBC596200888BC3 /* ContentView.swift */; };
 		28BC3F3C2CBC596400888BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BC3F3B2CBC596400888BC3 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		284BD6722CDEB3DC006B83B9 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		284BD6742CDEB3F3006B83B9 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		284BD6762CDEB4A4006B83B9 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		28BC3F342CBC596200888BC3 /* CosMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BC3F372CBC596200888BC3 /* CosMathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosMathApp.swift; sourceTree = "<group>"; };
 		28BC3F392CBC596200888BC3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				28BC3F372CBC596200888BC3 /* CosMathApp.swift */,
 				28BC3F392CBC596200888BC3 /* ContentView.swift */,
+				284BD6722CDEB3DC006B83B9 /* SettingView.swift */,
+				284BD6742CDEB3F3006B83B9 /* ResultView.swift */,
+				284BD6762CDEB4A4006B83B9 /* FontStyles.swift */,
 				28BC3F3B2CBC596400888BC3 /* Assets.xcassets */,
 				28BC3F3D2CBC596400888BC3 /* Preview Content */,
 			);
@@ -137,6 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284BD6732CDEB3DC006B83B9 /* SettingView.swift in Sources */,
+				284BD6772CDEB4A4006B83B9 /* FontStyles.swift in Sources */,
+				284BD6752CDEB3F3006B83B9 /* ResultView.swift in Sources */,
 				28BC3F3A2CBC596200888BC3 /* ContentView.swift in Sources */,
 				28BC3F382CBC596200888BC3 /* CosMathApp.swift in Sources */,
 			);
