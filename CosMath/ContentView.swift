@@ -89,15 +89,18 @@ struct ContentView: View {
     //start screen planet images grid
     struct GridImagesView: View {
         let rows = [
-                GridItem(.fixed(100)),  // Row 1
-                GridItem(.fixed(100)),  // Row 2
-                GridItem(.fixed(100))   // Row 3
-            ]
+            GridItem(.adaptive(minimum: 100, maximum: 500)), // Adjust max as needed
+            GridItem(.adaptive(minimum: 100, maximum: 500)), // Adjust max as needed
+            GridItem(.adaptive(minimum: 100, maximum: 500)) // Adjust max as needed
+        ]
         
         let images = ["Earth", "FullMoon", "RedPlanet", "PurplePlanet", "Saturn", "Sun", "BluePlanet", "WhiteMoon", "WhiteStar"]
         
         var body: some View {
-                ScrollView(.horizontal) {
+            GeometryReader { geometry in
+                let horizontalPadding = max((geometry.size.width - (CGFloat(images.count) * 30)) / 2, 0)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows, spacing: 50) {
                         ForEach(images, id: \.self) { image in
                             Image(image)
@@ -106,9 +109,11 @@ struct ContentView: View {
                                 .frame(width: 50)
                         }
                     }
-                    .padding(.leading, 80)
+                    .padding(.horizontal, horizontalPadding)
                 }
             }
+            .frame(height: 320) // Adjust the height as needed
+        }
     }
     
     //silver button(start, restart)
