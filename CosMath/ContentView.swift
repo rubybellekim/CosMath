@@ -29,63 +29,6 @@ struct ContentView: View {
         }
     }
     
-    //custom user input keypad button(each)
-    struct KeypadButton: View {
-        var label: String
-        var action: () -> Void
-        
-        var body: some View {
-            Button(action: {
-                action()
-            }) {
-                Text(label)
-                    .font(FontStyles.body)
-                    .frame(width: 80, height: 60)
-                    .background(Color.black.opacity(0.7))
-                    .foregroundColor(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding(3)
-            }
-        }
-    }
-    
-    //custom user input keypad(whole)
-    struct KeypadView: View {
-        @Binding var inputValue: String
-        @State private var counter = 0
-        
-        let columns = [
-            GridItem(.fixed(80)),
-            GridItem(.fixed(80)),
-            GridItem(.fixed(80))
-        ]
-        
-        var body: some View {
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(1..<10) { number in
-                    KeypadButton(label: "\(number)") {
-                        inputValue.append("\(number)")
-                        counter += 1
-                    }
-                    .sensoryFeedback(.increase, trigger: counter)
-                }
-                
-                // Empty button to maintain the keypad layout
-                KeypadButton(label: "") {}
-                
-                KeypadButton(label: "0") {
-                    inputValue.append("0")
-                }
-                
-                KeypadButton(label: "⌫") {
-                    if !inputValue.isEmpty {
-                        inputValue.removeLast()
-                    }
-                }
-            }
-        }
-    }
-    
     //start screen planet images grid
     struct GridImagesView: View {
         let rows = [
@@ -114,48 +57,6 @@ struct ContentView: View {
             }
             .frame(height: 320) // Adjust the height as needed
         }
-    }
-    
-    //silver button(start, restart)
-    struct SilverButton: ButtonStyle {
-        func makeBody(configuration: Configuration) -> some View {
-                configuration.label
-                    .frame(minWidth: 180, minHeight: 60)
-                    .background(LinearGradient(colors: [.gray, .white, .gray], startPoint: .top, endPoint: .bottom))
-                    .foregroundStyle(.black.opacity(0.5))
-                    .cornerRadius(10)
-                    .font((.custom("Futura", fixedSize: 30))
-                          )
-                    .shadow(
-                            color: Color.primary.opacity(0.3), /// shadow color
-                            radius: 2, /// shadow radius
-                            x: 3, /// x offset
-                            y: 6 /// y offset
-                        )
-                    .scaleEffect(configuration.isPressed ? 2.0 : 1)
-                    .animation(.easeOut(duration: 0.8), value: configuration.isPressed)
-            }
-    }
-
-    //black button(answer submit)
-    struct BlackButton: ButtonStyle {
-        func makeBody(configuration: Configuration) -> some View {
-                configuration.label
-                    .frame(minWidth: 250, minHeight: 60)
-                    .background(LinearGradient(colors: [.black, .gray, .black], startPoint: .top, endPoint: .bottom))
-                    .foregroundStyle(.white.opacity(0.8))
-                    .cornerRadius(10)
-                    .font((.custom("Futura", fixedSize: 30))
-                    )
-                    .shadow(
-                            color: Color.primary.opacity(0.3), /// shadow color
-                            radius: 2, /// shadow radius
-                            x: 3, /// x offset
-                            y: 6 /// y offset
-                        )
-                    .scaleEffect(configuration.isPressed ? 1.5 : 1)
-                    .animation(.easeOut(duration: 0.5), value: configuration.isPressed)
-            }
     }
     
     enum GameState {
